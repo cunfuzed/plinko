@@ -1,0 +1,182 @@
+/*DIE MARGINSSSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#menu-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 3s ease;
+}
+
+#menu-canvas.animate-out {
+  opacity: 0;
+}
+
+.board-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: grid;
+  gap: 8px;
+  width: 190px;
+  padding: 12px;
+  color: #012039;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(1, 32, 57, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(1, 32, 57, 0.15);
+  font: 13px/1.2 system-ui, sans-serif;
+}
+
+.board-controls label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.board-controls input {
+  width: 100%;
+  accent-color: #087ea4;
+}
+
+.board-controls button {
+  padding: 6px 9px;
+  color: white;
+  background: #087ea4;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.board-controls button:hover {
+  background: #056681;
+}
+
+/*now here's the good stuff*/
+.shop-container{
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  right: -20%;
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  border: 5px solid white;
+  transition: all 0.5s ease;
+  padding-top: 20px;
+  text-align: center;
+}
+.shop-container.active{
+  right: 0;
+}
+.shop-tab{
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10px;
+  border: 5px solid white;
+  background-color: #003e70;
+}
+.shop-tab:hover{
+  background-color: #00539c;
+}
+.shop-tab:active{
+  background-color: #0066b3
+}
+
+.wallet-display{
+  position: absolute;
+  width: 5%;
+  top: 10%;
+  left: 10%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 10px;
+  color: white;
+}
+.wallet-chip-image{
+  position: absolute;
+  top: 10%;
+  left: 9%;
+  transform: translate(-100%, 0)
+}
+
+.ticket-wallet-display{
+  position: absolute;
+  width: 5%;
+  top: 15%;
+  left: 10%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 10px;
+  color: white
+}
+.ticket-wallet-image{
+  position: absolute;
+  top: 15%;
+  left: 5%;
+}
+
+.menu-screen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: transparent;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 100px;
+  padding-top: 100px;
+  opacity: 1;
+  transition: opacity 3s ease;
+}
+.menu-screen.animate-out{
+  opacity: 0;
+  pointer-events: none;
+}
+.start-button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #700000;
+  color: black;
+  cursor: pointer;
+}
+.start-button:hover{
+  background-color: #9c0000;
+}
