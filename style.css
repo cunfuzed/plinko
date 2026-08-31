@@ -35,48 +35,6 @@ canvas {
   opacity: 0;
 }
 
-.board-controls {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 2;
-  display: grid;
-  gap: 8px;
-  width: 190px;
-  padding: 12px;
-  color: #012039;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(1, 32, 57, 0.18);
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(1, 32, 57, 0.15);
-  font: 13px/1.2 system-ui, sans-serif;
-}
-
-.board-controls label {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-}
-
-.board-controls input {
-  width: 100%;
-  accent-color: #087ea4;
-}
-
-.board-controls button {
-  padding: 6px 9px;
-  color: white;
-  background: #087ea4;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  font: inherit;
-}
-
-.board-controls button:hover {
-  background: #056681;
-}
-
 /*now here's the good stuff*/
 .shop-container{
   backdrop-filter: blur(10px);
@@ -90,6 +48,7 @@ canvas {
   transition: all 0.5s ease;
   padding-top: 20px;
   text-align: center;
+  overflow-y: auto;
 }
 .shop-container.active{
   right: 0;
@@ -97,21 +56,50 @@ canvas {
 .shop-tab{
   font-family: "Courier New", Courier, monospace;
   border-radius: 10px;
+  margin: 10px;
+  font-size: "20px";
+  padding: 10px;
   border: 5px solid white;
-  background-color: #003e70;
+  background-color: darkred;
+}
+.price-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.price-tag img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 .shop-tab:hover{
-  background-color: #00539c;
+  background-color: #a30000;
 }
 .shop-tab:active{
-  background-color: #0066b3
+  background-color: #eb0000
 }
+.shop-switch-modes{
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: "20px";
+  padding: 10px;
+  border: 5px solid white;
+  background-color: #040019;
+  text-align: center;
+  color: white;
+}
+.shop-switch-modes:hover{
+  background-color: #08002e;
+}
+
 
 .wallet-display{
   position: absolute;
   width: 5%;
   top: 10%;
-  left: 10%;
+  left: 110px;
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
   text-align: center;
@@ -122,7 +110,7 @@ canvas {
 .wallet-chip-image{
   position: absolute;
   top: 10%;
-  left: 9%;
+  left: 100px;
   transform: translate(-100%, 0)
 }
 
@@ -130,7 +118,7 @@ canvas {
   position: absolute;
   width: 5%;
   top: 15%;
-  left: 10%;
+  left: 110px;
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
   text-align: center;
@@ -141,7 +129,94 @@ canvas {
 .ticket-wallet-image{
   position: absolute;
   top: 15%;
-  left: 5%;
+  left: 100px;
+  transform: translate(-100%, 0)
+}
+
+.start-round-button{
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #700000;
+  color: black;
+  cursor: pointer
+}
+.start-round-button:hover{
+  background-color: #9c0000;
+}
+
+.display-round-stats{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #700000;
+  color: black
+}
+
+.pay-off-debt{
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #700000;
+  cursor: pointer;
+}
+.pay-off-debt:hover{
+  background-color: #9c0000;
+}
+.pay-off-debt img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.debt-menu{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 5px solid #ffea00;
+  border-radius: 10px;
+  background-color: #0a0a0a;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+.debt-menu h3{
+  color: #a30000;
+}
+.debt-menu button{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #700000;
+  color: black;
+  cursor: pointer;
+  margin: 10px;
+}
+.debt-menu button:hover{
+  background-color: #9c0000;
 }
 
 .menu-screen{
@@ -179,4 +254,21 @@ canvas {
 }
 .start-button:hover{
   background-color: #9c0000;
+}
+
+.logo{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.black-screen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: black;
+  z-index: 10;
+  color: white;
+  font-size: 20px;
+  padding-top: 25%;
 }
