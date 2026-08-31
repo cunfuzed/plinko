@@ -8,9 +8,8 @@
   </head>
   <body>
     <canvas class = "background" id = "backgroundCanvas"></canvas>
-    <div class = "shop-container">
-      <h2 style="font-family: 'Courier New', Courier, monospace;">Trinkets</h2>
-    </div>
+    <img class = "shop-arrow" src="graphics/arrow-right.png" alt="shop to the right" style = "position: absolute; top: 50%; right: 0; transform: translate(0, -50%);">
+    <div class = "shop-container"></div>
     <img src="graphics/redchip.png" alt="chips" class = "wallet-chip-image">
     <div class = "wallet-display">
       <p id = "wallet-amount"></p>
@@ -19,6 +18,9 @@
     <div class = "ticket-wallet-display">
       <p id = "ticket-wallet-amount"></p>
     </div>
+    <div class = "display-round-stats">Rounds left: 3 <br> Lives left: 10</div>
+    <button class = "start-round-button">Start Round</button>
+    <button class = "pay-off-debt">Pay off debt (15)<img src="graphics/redchip.png" alt="chip(s)"></button>
     <canvas id = "menu-canvas"></canvas>
     <div class = "menu-screen">
       <h1>PLINKO</h1>
